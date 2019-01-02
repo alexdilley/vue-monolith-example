@@ -20,7 +20,7 @@
     "lint:eslint": "eslint --fix",
     "lint:markdownlint": "markdownlint",
     "lint:prettier": "prettier --write --loglevel warn",
-    "lint:all:eslint": "yarn lint:eslint --ext .js,.vue",
+    "lint:all:eslint": "yarn lint:eslint --ext .js,.vue .",
     "lint:all:markdownlint": "yarn lint:markdownlint *.md",
     "lint:all:prettier": "yarn lint:prettier \"**/*.{json,js,vue,md}\"",
     "lint": "run-s lint:all:*",
@@ -62,6 +62,15 @@
       "prettier",
       "prettier/standard"
     ],
+    "rules": {
+      "import/no-unresolved": [
+        "error",
+        {
+          "commonjs": true,
+          "caseSensitive": true
+        }
+      ]
+    },
     "overrides": [
       {
         "files": [
